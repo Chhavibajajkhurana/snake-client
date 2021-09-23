@@ -1,24 +1,12 @@
-const net = require('net');
-const client = net.createConnection({ 
-    port: 50542, 
-    host: '135.23.223.133'
-}, () => {
-    console.log("multiplayer snek!")
-})
-const name = 'chhavi- test connection';
+const { connect } = require('./client');
+const { setupInput } = require('./input.js');
 
-client.setEncoding('utf8');
-client.write(`${name} has connected!!!`);
+const connection = connect();
 
-client.on('data', (data) => {
-    console.log("DATA CAME IN!!!!!");
-    console.log(data);
-})
+console.log('Connecting ...');
+connect();
 
+setupInput();
+setupInput(connection);
 
-  // interpret incoming data as text
-  
-
-
-// Snek Server IP: 135.23.223.133
-// Snek Port: 50542
+module.exports = { connect };

@@ -1,9 +1,9 @@
 const net = require('net');
 const client = net.createConnection({ 
-    port: 50542, 
-    host: '135.23.223.133'
+  port: 50542, 
+  host: '135.23.223.133'
 }, () => {
-    console.log("multiplayer snek!")
+  console.log("multiplayer snek!");
 })
 //const name = 'cbk';
 
@@ -12,8 +12,8 @@ client.write("Name: cbk");
 //conn.write("Name: cbk");
 
 client.on('data', (data) => {
-    console.log("DATA CAME IN!!!!!");
-    console.log(data);
+  console.log("DATA CAME IN!!!!!");
+  console.log(data);
 })
 
 
