@@ -5,10 +5,11 @@ const client = net.createConnection({
 }, () => {
     console.log("multiplayer snek!")
 })
-const name = 'chhavi- test connection';
+//const name = 'cbk';
 
 client.setEncoding('utf8');
-client.write(`${name} has connected!!!`);
+client.write("Name: cbk");
+//conn.write("Name: cbk");
 
 client.on('data', (data) => {
     console.log("DATA CAME IN!!!!!");
